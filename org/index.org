@@ -1,4 +1,5 @@
 #+TITLE: Table of Contents
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css">
 
    + [[file:selected_notes.html][Selected Notes]]
    + [[file:keyboard_story.html][Keyboard Story]]

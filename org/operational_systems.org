@@ -1,4 +1,5 @@
 #+TITLE: Operational Systems
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css">
 * Загрузка системы
 *Архитектура ПК. Assembler.* Организация памяти. Адресация памяти. 
 Взаимодействие микропроцессора и переферийных устройств. Прерывания и порты. 

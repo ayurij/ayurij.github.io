@@ -1,4 +1,5 @@
 #+TITLE: Selected Notes
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css">
 * About 
 
 This page looks primitive. Forget about slick layout, just make the pages informative. 
