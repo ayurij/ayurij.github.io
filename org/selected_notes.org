@@ -1,69 +1,139 @@
-#+TITLE: Selected Notes
+#+TITLE: Заметки
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css">
-* About 
+* Аксиоматика  
 
-This page looks primitive. Forget about slick layout, just make the pages informative. 
-Layout and graphical cosmetics are of secondary importance. 
-All pages have a single column layout with width the can be regulated by width of browser window. 
-The page is generated from org-mode file, which is easy to maintain. 
-Org-mode is a reliable (readable, plain text) format.   
+1. Природа неисчерпаема вглубь, а в памяти мы можем посмотреть всё до байта
+2. Информация доступна на разных уровнях детализации, однако целое больше суммы частей                                                                               
+3. Open source позволяет найти положение нужных структур в памяти или storage (если есть к ним доступ)                                                                                            
+4. Хорошо комментированный open source позволяет понять, что он делает   
 
-* Selected quotes, ideas
+Мы можем посмотреть структуру до байта (1) если open source (3), а также 
+на других, более высоких, уровнях - к примеру не в байтах, а в табличном представлении (2).  
 
-*Программирование* - управление сложностью/Programming is a complexity management
-("The Art of Unix Programming", Eric Raymond)
+Покажите мне код, не показывая структур данных, и я останусь в заблуждении.
+Покажите мне ваши структуры данных, и код, скорее всего, не понадобится: он будет очевиден.
+(Эрик Раймонд; Фредерик Брукс сначала говорил это про
+блок-схемы, таблицы, потом Раймонд переформулировал.)
+"в заблуждении" - наверно, грехи перевода.
+В отношении больших проектов (о которых фрагмент выше), можно сказать тоже,
+только вместо (код, структуры данных) -> (структуры данных, документация)  
 
-...the value of higher level documentation, like specification of interfaces and descriptions of architecture, can be greater than the source code itself.
-...
-Complexity and size effectively close source code for system programming projects like OSes compilers after, say, 
-100K lines of code without good higher level documentation or participation in the project from its early stages. 
-This "binarization" of source code in large system programming projects may mean that 
-there is little strategic importance to keep the source code of system programs closed after it reaches a certain level of maturity,
-with corresponding size and the level of complexity.
-...ценность документации более высокого уровня, такой, как спецификации интерфейсов и описание архитектуры, может превышать ценность самого исходного текста.
-...
-Сложность и объем фактически "закрывают" исходные тексты системных
-проектов, вроде ОС и компиляторов после превышения ими объема, скажем,
-в 100 тысяч строк, при условии, что отсутствует документация высокого
-уровня, и Вы не принимали личного участия в проекте с его ранних
-стадий. Такая "бинаризация" исходных текстов в крупных системных
-проектах может означать, что стратегическая важность сохранения
-исходных текстов закрытыми может теряться после того, как проект
-достигает некоторого уровня зрелости, а также соответствующего этой
-стадии разработки размера и уровня сложности.
-(A Second look at the Cathedral and the Bazaar by Nikolai Bezroukov)
+В базах данных есть механизмы повышения надежности (как в авиации): данные сразу не удаляются и т.п. 
 
-*Emacs* allows you to do much more than just editing. Emacs is not a mere
-editor like others, either in terminal or in GUI. Emacs is a development
-platform. Emacs is beyond an editor. Emacs is a programming platform that has an
-editor. Don't confuse Emacs with other real editors, which can only be
-used for editing. (tuhdo.github.io)
+* Наименование
 
-** Made by Human, Made by Heaven
-I think, there are two different types of professional work.
-The first one is based on information which was made by humans.
-We are using howto's, guides, source code, when we write a program, construct, audit etc.
-The second one is based on information which was made by heaven.
-It means, that we produce new knowledge and we need to 
-retrieve information from nature, represent and analyse it;
-and then it becomes input to the first type of work. 
-It could be research in physics, mathematics, economics 
-(which depends on social behavior and probability).    
-Of course, these are poles apart and we have a mix of them in reality,
-but with a different proportion and significance.
+** Трудности перевода
 
-** Reliable Links (to Nordic Summit)
-Millions of links appear every day in the Web and millions of links become broken, 
-leading to different query errors (e.g. widespread 404-error). 
-This reflects the dynamic character of the Web, but it becomes a difficulty when we wish to keep the content spread over the Web together.
-The reliability of links plays an important role in software.
-The present article is devoted to the static content.
+- Удаленный файл, файл на удаленной системе, удаленная ветка - delete/remote. отдаленный файл
+- Разрешенный конфликт, разрешенная запись - allowed/solved. устраненный конфликт
 
-** Links
+** Аббревиатура
 
-- "Everything you need to start using GnuPG", Justin R. Miller
+Для лучшего запоминания названий, надо понимать их расшифровку:
+- dpkg - debian package
+- =pg_hba= - hosted-based access
+- /etc - et cetera 
 
-- "Attending an academic conference", Michael Ernst, Washington University
+* Описание путей
 
-- "Responding to non-native speakers of English", Sheryl Hort, University of Minnesota
+Для доступа к объектам файловой системы используются пути.
+Также тут можно упомянуть сопутствующие понятия из JNDI:
+Naming Systems, Namespaces, Composite Names.
+Пути в файловой системе (в операционной системе), имеют определенный формат.
+(В Windows - используются составные, Composite Name; т.к. <диск>:\\<сам путь>\<файл с расширением>
+В Unix используется одна Naming System.)
+Вообще, файловая система - это иерархическая база данных. 
+С точки зрения XPath: путь к файл/директории - это частный случай запроса,
+где используется одна child ось.
+Общие обозначения: ./ ../ ~/ 
+В каждой системе возникают свои детали реализации.
+К примеру ../ в корневом каталоге ссылается туда же что и ./
+В системах есть некоторые ограничения и особенности.
+
+** Особенности обратной совместимости
  
+Они возникают либо из-за условий на обратную совместимость, 
+либо отражают процесс разработки и складываются исторически.
+Примеры. 
+В Windows-based системах нельзя использовать имя директории CON и много других
+из-за обратной совместимости с DOS-овскими именами устройств.
+В GNU/Linux системе можно осуществить переход в директорию "//", 
+которой не существует, но оставлена для будущей совместимости.
+При том, при использовании zsh зайти в директорию "//" уже нельзя.    
+
+** Особенности сложных систем: недодобранная функциональность
+
+Когда верхняя надстройка не использует возможности нижней, хотя у нее есть все возможности:
+- zsh: ../ не работает, когда верхний каталог был в процессе переименован; в bash - работает
+- sudo /dir/subdir/... автоподстановка не работает, если у текущего пользователя нет прав просмотра subdir, a она принадлежит не root, даже в случае, когда sudo-пароль был введен и действует. 
+
+* Экранирование
+
+Имена директорий и файлов, к примеру в Linux, могут содержать даже непечатные 
+символы. Как файловые менеджеры, так и мы сами вводим дополнительные ограничения.
+Файловый менеджер не даст ввести в имя непечатный символ.
+А если не допускать пробельные символы в именах, не надо бутет их экранировать
+при вводе в командной строке.
+Однако, надо предусмотреть и другой вариант.
+Предоставляя возможность командной оболочке вызывать файловые объекты по именам
+(то есть по текстовому представлению ссылки на объект), нужно определить механизм экранирования.
+Экранирование - это не видимый, но существенный механизм для контроля корректности и расширения
+возможностей программной среды.  
+Экранирование - механизм интеграции текстов различного происхождения 
+в текущую среду. 
+Под различным происхождением подразумевается не только различие в качестве, но и в источнике происхождения.
+Таким образом, под категорию таких текстов не попадают комментарии, в частности, комментарии для системы документирования, 
+директивы препроцессора и подобные вещи, так как они больше расчитаны на внутреннюю обработку. 
+Правила экранирования определяются индивидуально для сред, языков программирования и разметки.
+Таких примеров множество. 
+Одним из необычных примеров является символ "!"
+позволяющий выполнять команды из командного интерпретатора(точнее, получать вывод этих команд) в другой среде.
+Такой способ используется в Vim, Psql, IPython, Git  
+При вызове команды в командной строке подряд два дефиса отменяют интерпретацию последующих дефисов как знаков ключей. 
+
+* Синтаксис **
+
+Синтаксис для рекурсивного включения объектов json в Postgres.
+Вообще, нормальная математическая идиома: повторение знака опрации. (стрелочная нотация Кнута, к примеру) 
+На практике 
+- традиционно, вместо возведения в степень
+используется для рекурсивного поиска в деревьях:
+- rdiff-backup
+- fish shell 
+- git
+
+* Синтаксис psql: наблюдения
+
+** Возможности psql, определившие ее синтаксис:
+
+- в командной строке psql можно вводить и SQL запросы и psql-команды
+- можно задавать несколько psql-команд за один ввод 
+- есть команды, принимающие пути файлов в качестве аргументов
+- возможно определять переменные, то есть присутствуют элементы ESQL
+- можно вызывать команды командного интерпретатора (связь с внешним миром)
+
+** Общие ограничения(правила) накладываемые на синтаксис:
+
+- синтаксический разбор должен быть простым по возможности
+- не усложнять структуру команд, не создавать лишние ключи для команд
+- согласовываться с общепринятыми стандартами в соответствующих контекстах 
+
+** Пояснения
+
+Строка ввода может содержать несколько psql-команд, файловые пути и непосредственно SQL.
+Поэтому, желательно, чтобы psql-команды не смешивались с другими элементами,
+то есть для маркера psql-команды нужно выбрать наименее используемый символ.    
+Соответственно, был выбран обратный слеш '\'.
+
+В Psql можно работать с переменными, при этом используется символ двоеточия ':'.
+Это согласуется со стандартами Embedded SQL.
+
+Для вызова команд командной оболочки sh, используется префикс '\! '.
+Восклицательный знак - стандартная команда для вызова команды оболочки из vim, IPython. 
+
+Тем не менее, функция cd указывается без префикса, то есть как '\cd'.
+Действительно, это можно объяснить тем, что в данном случае cd является по смыслу внутренней комадой,
+не влияющей на внешнее окружение. Если мы создадим файл '\! touch filename', то он действительно будет
+создан в текущей директории '\! pwd', и останется после выхода '\q' из psql.
+Однако, если мы перейдем в другую директорию '\cd ./subdir', то после выхода из psql новое значение рабочей директории не 
+будет передано процессу командного интерпретатора, то есть мы вернемся в ту директорию, в которой были до вызова psql.  
