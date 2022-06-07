@@ -1,0 +1,52 @@
+Welcome! My name is Yury (transliterated as yurij, iurii, etc.). 
+I'm from Saint-Petersburg, Russia. The picture of Saint-Petersburg is on the 
+cover.
+
+===========
+Mathematics
+===========
+  I'm a mathematician. I enjoy mathematical analysis that has a geometric 
+flavour. I'm particularly interested in real analysis, geometric measure 
+theory, analysis on metric spaces, metric geometry, functional analysis, 
+positivity; Academic CV posted separately.
+
+====================================
+Organization of scientific processes
+====================================
+  The director of Mathsalon, scientific organization. 
+  mathsalon.ru, mathsalon.org
+
+=========================
+CS & software development
+=========================
+  I'm interested in free software, SQL, computer science, data base theory, 
+functional programming.
+
+-----------
+Experience:
+-----------
+- before 2015: CMS development (PHP-based CMS: GetSimple, Wordpress, OpenCart, 
+Joomla!, Drupal, PHPShop; python Django framework);
+- before 2018: Postgresql, Postgres extensions development; 
+- Mathsalon. Javascript technology stack (Node, Angular, ReactiveForms, 
+Postman, Ansible, etc.)
+- course of functional programming
+
+------------------
+Selected Software:
+------------------
+- Linux Ubuntu; 
+- KDE desktop; 
+- tiling window manager i3 (nm-applet, kmix, usbmount utilities); 
+- Krusader 
+- VS Code IDE;
+CLI software:
+- zsh shell, oh-my-zsh theme;
+- autojump utility;
+- tmux terminal multiplexer
+- vim
+- Midnight Commander
+- git
+- mutt 
+
+
